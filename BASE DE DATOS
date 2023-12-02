@@ -1,0 +1,225 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////// TECNOLOGIAS EMERGENTES II /////////////////////////////////////////////////////////
+-----------------------------CREAMOS LA BASE DE DATOS LIBRERIA-------------------------------------------
+create database libreria;
+use libreria;
+-----CREAMOS LA TABLA USUARIO----
+create table usuarios(id int auto_increment primary key,
+nombre varchar(30),
+Apellidos varchar(30),
+usuario varchar(30),
+contraseña varchar(30),
+rango varchar(30),
+codigo_admin varchar(20));
+
+----INSERTAMOS DATOS A LA TABLA USUARIO-----
+insert into usuarios(nombre,apellidos,usuario,contraseña,rango)
+values ("mary","chambi","mary1@","1111","usua","admin123");
+select * from usuarios;
+---------------CREAMOS LA TABLA COMPRA--------------------------------------
+
+create table compras(id int auto_increment primary key,
+producto varchar(250),
+cantidad int,
+precio_total decimal(10,2),
+tipo_pago varchar(100),
+nombre_usuario varchar(100));
+-------INSERTAMOS DATOS--------------
+insert into compras(producto,cantidad,precio_total,tipo_pago)
+values("boligrafo",1,'0.50',"QR");
+-------------------CREAMOS LA TABLA COMPRA CARRITO---------------------------------
+create table compra_carrito(id int auto_increment primary key,
+producto varchar(250),
+precio decimal(10,2));
+------------------INSERTAMOS DATOS------------------------
+insert into compra_carrito(producto,precio)
+values("boligrafo",'0.50');
+------------------------CREAMOS LA TABLA COLORES--------------
+create table colores(id int auto_increment primary key,
+marca varchar(50),
+descripcion varchar(100),
+precio decimal(10,2),
+proveedor varchar(50),
+imagen varchar(50));
+
+-----------------INSERTAMOS DATOS ---------------------
+insert into colores(marca,descripcion,precio,proveedor,imagen)values
+("Faber-Castell","aaaaaaaaaaaaaaaaaaaaaaaaa Faber-Castell",'25.00',"don julio","ima/colores/1.png");
+insert into colores(marca,descripcion,precio,proveedor,imagen)values
+("Stabilo",'lapices de colores STABILO Swans Jumbo','42.00',"don julio","ima/colores/2.png");
+insert into colores(marca,descripcion,precio,proveedor,imagen)values
+("Maped Color",'Lapices triangulares de colores Maped Color','15.00',"don julio","ima/colores/3.png");
+insert into colores(marca,descripcion,precio,proveedor,imagen)values
+("Maped Color",'Lapices triangulares de colores Maped Color de 100 Piezas','25.00',"don julio","ima/colores/4.png");
+insert into colores(marca,descripcion,precio,proveedor,imagen)values
+("Maped Color",'set de 12 lapices de colores acuarelables Maped Color','15.00',"don julio","ima/colores/5.png");
+
+---------------CREAMOS LA TABLA BOLIGRAFOS---------------------------
+create table boligrafos(id int auto_increment primary key,
+marca varchar(50),
+descripcion varchar(100),
+precio decimal(10,2),
+proveedor varchar(50),
+imagen varchar(50),
+imagen varchar(50));
+
+------------INSERTAMOS DATOS-------------------------------
+insert into boligrafos(marca,descripcion,precio,proveedor,imagen)values
+("Pilot","Boligrafor retractiles",'1.00',"don Marco","ima/boligrafos/1.png");
+insert into boligrafos(marca,descripcion,precio,proveedor,imagen)values
+("Stabilo",'Boligrafo STABILO 0.5mm ','42.00',"don julio","ima/boligrafos/2.png");
+insert into boligrafos(marca,descripcion,precio,proveedor,imagen)values
+("Milcar",'Boligrafo Milcar 0.7 mm','15.00',"don julio","ima/boligrafos/3.png");
+insert into boligrafos(marca,descripcion,precio,proveedor,imagen)values
+("Faber Castell",'Boligrafos Faber castell','1.00',"don julio","ima/boligrafos/4.png");
+insert into boligrafos(marca,descripcion,precio,proveedor,imagen)values
+("Monami",'Boligrafos monami ball 0.7','1.00',"don julio","ima/boligrafos/5.png");
+insert into boligrafos(marca,descripcion,precio,proveedor,imagen)values
+("Pilot","Boligrafor retractiles",'1.00',"don Marco","ima/boligrafos/6.png");
+insert into boligrafos(marca,descripcion,precio,proveedor,imagen)values
+("Stabilo",'Boligrafo STABILO 0.2mm ','2.00',"don julio","ima/boligrafos/7.png");
+insert into boligrafos(marca,descripcion,precio,proveedor,imagen)values
+("Milcar",'Boligrafo Milcar 0.8 mm','1.50',"don julio","ima/boligrafos/8.png");
+insert into boligrafos(marca,descripcion,precio,proveedor,imagen)values
+("Faber Castell",'Boligrafos Faber castell','1.00',"don julio","ima/boligrafos/9.png");
+insert into boligrafos(marca,descripcion,precio,proveedor,imagen)values
+("Monami",'Boligrafos monami ball 0.7','1.00',"don julio","ima/boligrafos/10.png");
+
+------------------CREAMOS LA TABLA MARCADORES--------------------------------------
+create table marcadores(id int auto_increment primary key,
+marca varchar(50),
+descripcion varchar(100),
+precio decimal(10,2),
+proveedor varchar(50),
+imagen varchar(50));
+
+----------------INSERTAMOS DATOS -------------------------------------------------
+insert into marcadores(marca,descripcion,precio,proveedor,imagen)values
+("Faber-Castell","Marcadores permanentes Faber-Castell",'2.00',"don julio","ima/marcadores/1.png");
+insert into marcadores(marca,descripcion,precio,proveedor,imagen)values
+("Prenium",'Marcador permanente prenium','2.00',"don julio","ima/marcadores/2.png");
+insert into marcadores(marca,descripcion,precio,proveedor,imagen)values
+("Milcar",'3 marcadores permanente MIlcar','6.00',"don julio","ima/marcadores/3.png");
+insert into marcadores(marca,descripcion,precio,proveedor,imagen)values
+("Shaelple",'marcador de agua','2.00',"don julio","ima/marcadores/4.png");
+insert into marcadores(marca,descripcion,precio,proveedor,imagen)values
+("Pilot",'marcador Pilost permanente','2.00',"don julio","ima/marcadores/5.png");
+----------------------CREAMOS LA TABLA BORRADORES-----------------------------------
+create table borradores(id int auto_increment primary key,
+marca varchar(50),
+descripcion varchar(100),
+precio decimal(10,2),
+proveedor varchar(50),
+imagen varchar(50));
+use libreria;
+-----------------INSERTAMOS DATOS ----------------------------------
+insert into borradores(marca,descripcion,precio,proveedor,imagen)values
+("Faber-Castell","goma de osito ",'1.00',"don julio","ima/borradores/9.png");
+insert into borradores(marca,descripcion,precio,proveedor,imagen)values
+("Cretacolor",'goma caramel de 4x4','2.00',"don julio","ima/borradores/9.png");
+insert into  borradores(marca,descripcion,precio,proveedor,imagen)values
+("Cretacolor",'goma miga de pan','1.50',"don marco","ima/borradores/9.png");
+insert into  borradores(marca,descripcion,precio,proveedor,imagen)values
+("Cretacolor",'goma arcoiris','2.00',"don julio","ima/borradores/9.png");
+insert into  borradores(marca,descripcion,precio,proveedor,imagen)values
+("Cretacolorr",'goma para boligrafo','5.00',"don julia","ima/borradores/9.png");
+insert into  borradores(marca,descripcion,precio,proveedor,imagen)values
+("Stabilo",'goma miga de pan','3.00',"don julio","ima/borradores/9.png");
+insert into  borradores(marca,descripcion,precio,proveedor,imagen)values
+("Cretacolor",'goma miga de pan negro de 4x4','15.00',"don julio","ima/borradores/9.png");
+insert into  borradores(marca,descripcion,precio,proveedor,imagen)values
+("Maped Color",'goma borrador electronico','25.00',"don julio","ima/borradores/9.png");
+insert into borradores(marca,descripcion,precio,proveedor,imagen)values
+("Maped Color",'goma sello','3.00',"don marco","ima/borradores/9.png");
+
+
+---------------------------CREAMOS LA TABLA TIJERAS-------------------------
+create table tijeras(id int auto_increment primary key,
+marca varchar(50),
+descripcion varchar(100),
+precio decimal(10,2),
+proveedor varchar(50),
+imagen varchar(50));
+------------------------INSERTAMOS DATOS
+insert into tijeras(marca,descripcion,precio,proveedor,imagen)values
+("office","tijera office de 10 cm",'5.00',"don julio","ima/tijeras/1.png");
+insert into tijeras(marca,descripcion,precio,proveedor,imagen)values
+("office",'tijera office dde 10 cm color azul','5.00',"don julio","ima/tijeras/2.png");
+insert into tijeras(marca,descripcion,precio,proveedor,imagen)values
+("corriente",'tijera comercial rojo','2.00',"don julio","ima/tijeras/3.png");
+insert into tijeras(marca,descripcion,precio,proveedor,imagen)values
+("corriente",'tijera comercial negro','10.00',"don julio","ima/tijeras/4.png");
+insert into tijeras(marca,descripcion,precio,proveedor,imagen)values
+("corriente",'tijera comercial grande','45.00',"don julio","ima/tijeras/5.png");
+-----------------------------CREAMOS LA TABLA CUADERNOS-------------------------------
+create table cuadernos(id int auto_increment primary key,
+marca varchar(50),
+descripcion varchar(100),
+precio decimal(10,2),
+proveedor varchar(50),
+imagen varchar(50));
+-----------------------INSERTAMOS DATOS -------------------------------
+insert into cuadernos(marca,descripcion,precio,proveedor,imagen)values
+("Abc","Empastado tamño carta de 50 hojas",'20.00',"don julio","ima/cuadernos/1.png");
+insert into cuadernos(marca,descripcion,precio,proveedor,imagen)values
+("lidere",'Empastado lider tamaño oficio de 100 hojas','22.00',"don julio","ima/cuadernos/2.png");
+insert into cuadernos(marca,descripcion,precio,proveedor,imagen)values
+("Comercial",'Empastado carta de 100 hojas','15.00',"don julio","ima/cuadernos/3.png");
+insert into cuadernos(marca,descripcion,precio,proveedor,imagen)values
+("lider",'Empastado de gatitos 50 hojas','25.00',"don julio","ima/cuadernos/4.png");
+insert into cuadernos(marca,descripcion,precio,proveedor,imagen)values
+("lider",'Empastado lider para niñas','15.00',"don julio","ima/cuadernos/5.png");
+
+---------------------CREAMOS LA TABLA NOVEDADES-----------------------------------
+create table novedades(id int auto_increment primary key,
+marca varchar(50),
+descripcion varchar(100),
+precio decimal(10,2),
+proveedor varchar(50),
+imagen varchar(50));
+-------------------INSERTAMOS DATOS----------------------
+insert into novedades(marca,descripcion,precio,proveedor,imagen)values
+("Carter","colores carter 12 colores",'15.00',"don julio","ima/novedades/1.png");
+insert into novedades(marca,descripcion,precio,proveedor,imagen)values
+("faber castell",'lapiz 2B','42.00',"don julio","ima/novedades/2.png");
+insert into novedades(marca,descripcion,precio,proveedor,imagen)values
+("coyote",'libro Once Upon a Time','30.00',"don julio","ima/novedades/3.png");
+insert into novedades(marca,descripcion,precio,proveedor,imagen)values
+("Maped Color",'kit de micro puntas','25.00',"don julio","ima/novedades/4.png");
+insert into novedades(marca,descripcion,precio,proveedor,imagen)values
+("Maped Color",'set de 12 lapices de colores acuarelables Maped Color','15.00',"don julio","ima/novedades/5.png");
+
+--------------------CREAMOS LA TABLA REGLAS COMPAS--------------------------------------------------------
+
+create table reglas_compas(id int auto_increment primary key,
+marca varchar(50),
+descripcion varchar(100),
+precio decimal(10,2),
+proveedor varchar(50),
+imagen varchar(50));
+
+
+------------------------INSERTAMOS DATOS ------------------------------------
+insert into reglas_compas(marca,descripcion,precio,proveedor,imagen)values
+("Comercial","estuche geometrico con compas incluido",'15.00',"don Martin","ima/reglas/1.png");
+insert into reglas_compas(marca,descripcion,precio,proveedor,imagen)values
+("Comercial",'reglas geometricas grandes para escalas mayores','102.00',"don Martin","ima/reglas/2.png");
+insert into reglas_compas(marca,descripcion,precio,proveedor,imagen)values
+("coyote",'estuche juego de reglas','15.00',"don Martin","ima/reglas/3.png");
+insert into reglas_compas(marca,descripcion,precio,proveedor,imagen)values
+("Artesco",'estuche geometrico azul','15.00',"don Martin","ima/reglas/4.png");
+insert into reglas_compas(marca,descripcion,precio,proveedor,imagen)values
+("Madison",'estuche madison color verde tipo goma','24.00',"don Martin","ima/reglas/5.png");
+
+insert into reglas_compas(marca,descripcion,precio,proveedor,imagen)values
+("Study","Compas metalica color plomo",'15.00',"don Martin","ima/compas/1.png");
+insert into reglas_compas(marca,descripcion,precio,proveedor,imagen)values
+("Study",'Compas metalica color rosado','15.00',"don Martin","ima/compas/2.png");
+insert into reglas_compas(marca,descripcion,precio,proveedor,imagen)values
+("sabonis",'Compas plastica ','5.00',"don Martin","ima/compas/3.png");
+insert into reglas_compas(marca,descripcion,precio,proveedor,imagen)values
+("Artesco",'Compas metalica para planos definidos','35.00',"don Martin","ima/compas/4.png");
+insert into reglas_compas(marca,descripcion,precio,proveedor,imagen)values
+("Comercial",'Compas plastica','2.00',"don Martin","ima/compas/5.png");
+
+----------------------------------------------------------
